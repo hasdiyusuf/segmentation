@@ -5,10 +5,6 @@ Created on Wed May 18 09:43:34 2022
 @author: DELL
 """
 
-import os
-import pandas as pd
-import numpy as np
-import pickle
 
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, MinMaxScaler
@@ -53,6 +49,9 @@ class ModelCreation():
         model = Sequential()
         
         model.add(Input(shape = (input_shape)))
+        model.add(Dense(nodes, activation))
+        model.add(BatchNormalization())
+        model.add(Dropout(dropout))
         model.add(Dense(nodes, activation))
         model.add(BatchNormalization())
         model.add(Dropout(dropout))

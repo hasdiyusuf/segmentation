@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import datetime
+
 from segmentation_class_module import ExploratoryDataAnalysis, ModelCreation, ModelEvaluate 
 from tensorflow.keras.callbacks import TensorBoard, EarlyStopping
 from tensorflow.keras.utils import plot_model
@@ -58,7 +59,7 @@ x_train, x_test, y_train, y_test = train_test_split(x_scaled, y_train,
 
 nb_inputs = x_train.shape[1]
 mc = ModelCreation()
-model = mc.model_create(input_shape= 10, nodes = 100)
+model = mc.model_create(input_shape= 10, nodes = 64)
 plot_model(model)
 #%% model compile?evaluat
 
