@@ -37,5 +37,5 @@ segmentation_deploy.py : files for deployment
 ![](static/model.png)
 
 ## Loss and Accuracy
-![](static/loss.png)
-![](static/accuracy.png)
+![](static/tesorboard.PNG)
+
