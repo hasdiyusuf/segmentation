@@ -15,20 +15,27 @@ segmentation_train.py : files for training the dataset
 
 segmentation_deploy.py : files for deployment
 
-## how to run:
+## How to run:
  run segmentation_train
  
  run segmentation_deploy
  
-## result accuracy 
+## Credit
+ shout out to abisheksudarsha for the datasets
+ 
+ checkout this link:
+ 
+ https://www.kaggle.com/datasets/abisheksudarshan/customer-segmentation
+ 
+## Result Accuracy 
 ![image](static/acc_score.PNG)
 
-## report
+## Report
 ![](static/report.PNG)
 
-## model architecture
+## Model Architecture
 ![](static/model.png)
 
-## loss and accuracy
+## Loss and Accuracy
 ![](static/loss.png)
 ![](static/accuracy.png)
