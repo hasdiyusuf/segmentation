@@ -127,6 +127,13 @@ y_true = np.argmax(y_true, axis = -1)
 me = ModelEvaluate()
 me.report(y_pred, y_true)
 
+# Discussion
+# from the accuracy score and f1 score the model able toget
+# 51% of accuracy. with more data point added 
+# might improve the performance of the model
+# other than that, performance can also be improve by using 
+# Machine Learning Approach
+
 #%% saved model 
 model.save(MODEL_SAVE_PATH)
 
