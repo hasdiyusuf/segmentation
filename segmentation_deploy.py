@@ -1,4 +1,4 @@
-
+# import library
 import pandas as pd
 import numpy as np
 import pickle
@@ -6,10 +6,12 @@ import os
 from tensorflow.keras.models import load_model
 from segmentation_class_module import ExploratoryDataAnalysis, ModelCreation, ModelEvaluate 
 
+# saved model path
 MODEL_SAVE_PATH = os.path.join(os.getcwd(), 'model_saved','model.h5')
 
+# path for the test dataset
 PATH = os.path.join(os.getcwd(),'dataset', 'new_customers.csv')
-
+# load dataset
 df = pd.read_csv(PATH)
 #%% load model 
 
@@ -40,7 +42,7 @@ outcome = model.predict(df)
 
 segmentation_dict = {0:'A', 1 :'B', 2:'C', 3:'D'}
 
-
+predicted = []
 for index, segment in enumerate(outcome):
-    print(segmentation_dict[np.argmax(segment)])
+    predicted.append(segmentation_dict[np.argmax(segment)])
     

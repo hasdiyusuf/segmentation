@@ -22,11 +22,41 @@ class ExploratoryDataAnalysis():
         pass
     
     def fill_null(self, data):
-         imputer = SimpleImputer(strategy = 'most_frequent')
-         data =  imputer.fit_transform(data)
-         return data
+        '''
+        filling null values using simple imputer
+
+        Parameters
+        ----------
+        data : dataframe
+            DESCRIPTION.
+
+        Returns
+        -------
+        data : np array
+            DESCRIPTION.
+
+        '''
+        
+        imputer = SimpleImputer(strategy = 'most_frequent')
+        data =  imputer.fit_transform(data)
+        return data
      
+        
     def label_encoder(self,data):
+        '''
+        convert categorical data into numeric
+
+        Parameters
+        ----------
+        data : categorical
+            DESCRIPTION.
+
+        Returns
+        -------
+        data : float64
+            DESCRIPTION.
+
+        '''
         obj_list = data.select_dtypes(include = 'object').columns
         le = LabelEncoder()
         
@@ -35,11 +65,39 @@ class ExploratoryDataAnalysis():
         return data
     
     def one_hot_encoder(self,label):
+        '''
+        encode multiclass label into one hot encoder 
+
+        Parameters
+        ----------
+        label : str
+            DESCRIPTION.
+
+        Returns
+        -------
+        y_train : float
+            DESCRIPTION.
+
+        '''
         ohe = OneHotEncoder(sparse = False)
         y_train = ohe.fit_transform(label)
         return y_train
     
     def feature_scalling(self, data):
+        '''
+        features scaling using Min Max Scaller 
+
+        Parameters
+        ----------
+        data : TYPE
+            DESCRIPTION.
+
+        Returns
+        -------
+        x_scaled : TYPE
+            DESCRIPTION.
+
+        '''
         mms = MinMaxScaler()
         x_scaled = mms.fit_transform(data)
         return x_scaled
